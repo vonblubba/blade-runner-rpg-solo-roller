@@ -25,7 +25,7 @@ on-device, no network access, no accounts.
   directory today. If the user adds another PDF later, that's a new pass of
   data extraction, not a re-architecture.
 
-### Table catalog (22 tables, 8 sections)
+### Table catalog (22 tables, 9 sections)
 
 | # | Section | Table | Dice | Columns |
 |---|---|---|---|---|
