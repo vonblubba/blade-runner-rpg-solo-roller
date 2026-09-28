@@ -8,13 +8,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -23,6 +24,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.oscarriva.solomoderoller.data.RollTable
 import com.oscarriva.solomoderoller.model.RollEntry
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -39,7 +43,7 @@ fun TableRollScreen(
                 title = { Text(table.title) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.Filled.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                     }
                 },
                 actions = {
@@ -66,11 +70,19 @@ fun TableRollScreen(
     }
 }
 
+private val rollTimeFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
+
 @Composable
 private fun RollEntryCard(entry: RollEntry) {
     Card(modifier = Modifier.fillMaxWidth().padding(4.dp)) {
         Column(modifier = Modifier.padding(12.dp)) {
+            Text(entry.tableTitle, style = MaterialTheme.typography.titleSmall)
             Text(entry.diceDescription)
+            Text(
+                rollTimeFormat.format(Date(entry.timestamp)),
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
             entry.resultLines.forEach { line -> Text(line) }
         }
     }
