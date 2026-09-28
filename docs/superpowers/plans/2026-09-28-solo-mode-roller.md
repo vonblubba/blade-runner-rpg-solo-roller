@@ -6,7 +6,7 @@
 
 **Architecture:** Kotlin + Jetpack Compose, single-activity, no network/persistence. Table data is a hand-transcribed JSON asset (`app/src/main/assets/tables.json`) loaded once at startup into in-memory data classes. A pure `Roller` object resolves random or fixed die values against a table's row ranges. UI is two Compose screens (section list, table roll) with in-memory session history.
 
-**Tech Stack:** Kotlin 2.4.20, Jetpack Compose (BOM 2026.09.00), AGP 9.4.1, Gradle 9.8.0, kotlinx-serialization-json 1.11.0, JUnit4 for local unit tests. `minSdk 26`, `compileSdk`/`targetSdk 36`, `buildToolsVersion 36.0.0`.
+**Tech Stack:** Kotlin 2.4.20, Jetpack Compose (BOM 2026.09.00), AGP 9.4.1, Gradle 9.8.0, kotlinx-serialization-json 1.11.0, JUnit4 for local unit tests. `minSdk 26`, `targetSdk 36`, `compileSdk 37` (bumped from the originally planned 36 during Task 2 — see that task's implementation note), `buildToolsVersion 37.0.0`.
 
 ## Global Constraints
 
@@ -102,6 +102,12 @@ No commit for this task — nothing in the repo changed.
 **Interfaces:**
 - Consumes: `java`, `sdkmanager`, `gradle` (bootstrap only) from Task 1's `PATH`/`ANDROID_HOME`.
 - Produces: a buildable Gradle project (`./gradlew assembleDebug` succeeds) with the `com.oscarriva.solomoderoller` package/namespace and the exact dependency set every later task's Kotlin files rely on (`kotlinx-serialization-json`, Compose BOM + `ui`/`material3`/`material-icons-core`/`activity-compose`, `core-ktx`, JUnit4).
+
+> **Implementation note (added post-execution):** the code blocks below are the plan as originally written. Actually running the build against AGP 9.4.1 and compose-bom 2026.09.00 surfaced two real incompatibilities with those exact pinned values, fixed during implementation (commit `6029e66`, full reasoning in `.superpowers/sdd/task-2-report.md`):
+> 1. AGP 9.0+ has built-in Kotlin support; applying the separate `org.jetbrains.kotlin.android` plugin (Step 2 and Step 4 below) is now a hard error. It was removed from both `build.gradle.kts` files; the `org.jetbrains.kotlin.plugin.serialization` and `org.jetbrains.kotlin.plugin.compose` plugins are unaffected. The `kotlinOptions { jvmTarget = "17" }` block in Step 4 (which that plugin contributed) was removed too — `compileOptions` alone is sufficient.
+> 2. compose-bom 2026.09.00 and core-ktx 1.19.1 require `compileSdk 37+`, not 36. `compileSdk` and `buildToolsVersion` in Step 4 were bumped to `37` / `"37.0.0"` (platform `platforms;android-37.2` and `build-tools;37.0.0` installed accordingly). `minSdk` (26) and `targetSdk` (36) are unchanged.
+>
+> No task after Task 2 references `compileSdk`, `buildToolsVersion`, or the Kotlin Android plugin, so this doesn't affect later briefs.
 
 - [ ] **Step 1: Create `settings.gradle.kts`**
 
