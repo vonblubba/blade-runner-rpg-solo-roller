@@ -3,6 +3,7 @@
 
 # Android / Gradle build outputs (added once the app project exists)
 .gradle/
+.kotlin/
 build/
 *.apk
 *.ap_
