@@ -1,0 +1,13 @@
+# Source PDF is copyrighted RPG material — kept locally, not versioned.
+*.pdf
+
+# Android / Gradle build outputs (added once the app project exists)
+.gradle/
+build/
+*.apk
+*.ap_
+*.dex
+local.properties
+.idea/
+.cxx/
+captures/
