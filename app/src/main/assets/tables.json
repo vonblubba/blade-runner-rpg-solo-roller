@@ -1,0 +1,536 @@
+{
+  "sections": [
+    {
+      "name": "Character Creation",
+      "tables": [
+        {
+          "id": "blade_runner_origin",
+          "title": "Blade Runner Origin",
+          "dice": ["d12"],
+          "columns": ["Result"],
+          "rows": [
+            {"ranges": [{"min":1,"max":1}], "values": ["In the wake of a traumatic incident, your dreams invade your waking life. You're not sure what's real anymore."]},
+            {"ranges": [{"min":2,"max":2}], "values": ["Your vice has gotten the better of you before. To others, you're a liability."]},
+            {"ranges": [{"min":3,"max":3}], "values": ["Your methods are unorthodox and reckless, but you always get results."]},
+            {"ranges": [{"min":4,"max":4}], "values": ["You had a partner, but the case went bad. They lost their life, and you lost a friend."]},
+            {"ranges": [{"min":5,"max":5}], "values": ["You reported a crooked cop. Others don't trust you."]},
+            {"ranges": [{"min":6,"max":6}], "values": ["You've got a knack for finding trouble, and a reputation for collateral damage."]},
+            {"ranges": [{"min":7,"max":7}], "values": ["An ongoing investigation into recent actions makes you the department pariah."]},
+            {"ranges": [{"min":8,"max":8}], "values": ["After a traumatic childhood, you struggled all your life to make connections."]},
+            {"ranges": [{"min":9,"max":9}], "values": ["You returned from off-world. Earth has changed, and so have you."]},
+            {"ranges": [{"min":10,"max":10}], "values": ["A desperate gunfight left civilians bleeding in the street. You took the blame."]},
+            {"ranges": [{"min":11,"max":11}], "values": ["Amid a sensational case, you drew too much media attention."]},
+            {"ranges": [{"min":12,"max":12}], "values": ["You're part of the old guard, and your methods seem dated to young Blade Runners."]}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Investigation Basics",
+      "tables": [
+        {
+          "id": "scene_categories",
+          "title": "Scene Categories",
+          "dice": ["d12"],
+          "columns": ["Result", "Detail", "Skill Roll Examples"],
+          "rows": [
+            {"ranges": [{"min":1,"max":1}], "values": ["Confront", "Overcome a potentially violent confrontation", "MANIPULATION to talk down a target, MOBILITY or DRIVING to close distance or block escape, HAND-TO-HAND COMBAT to subdue or restrain; FIREARMS if lethal force becomes necessary"]},
+            {"ranges": [{"min":2,"max":2}], "values": ["Canvass", "Survey an area or community", "CONNECTIONS to find witnesses or hear the word on the street, OBSERVATION to look for anything out of the ordinary, INSIGHT to read the general mood"]},
+            {"ranges": [{"min":3,"max":3}], "values": ["Consult", "Seek expert insight or outside perspective", "CONNECTIONS to leverage an informant or LAPD asset, MANIPULATION to gain cooperation, TECH or MEDICAL AID to verify or interpret findings"]},
+            {"ranges": [{"min":4,"max":4}], "values": ["Examine", "Analyze evidence closely for details", "OBSERVATION to study subtle evidence, TECH to interpret data or digital traces, MEDICAL AID to examine forensic clues"]},
+            {"ranges": [{"min":5,"max":5}], "values": ["Infiltrate", "Enter a location covertly to gather information", "CONNECTIONS to gain inside cooperation or false credentials, MANIPULATION to trick your way inside, STEALTH to move unseen, TECH to bypass security or access systems, OBSERVATION to spot important details"]},
+            {"ranges": [{"min":6,"max":6}], "values": ["Pursue", "Chase a person or vehicle", "MOBILITY or DRIVING to maintain pursuit, OBSERVATION to track movement through chaotic environments, HAND-TO-HAND combat or DRIVING when ending the chase by force"]},
+            {"ranges": [{"min":7,"max":7}], "values": ["Question", "Interview or interrogate a person", "CONNECTIONS to request a meeting, INSIGHT to read a subject, MANIPULATION to interrogate a suspect or uncooperative witness, TECH to operate a V-K machine or perform a baseline test"]},
+            {"ranges": [{"min":8,"max":8}], "values": ["Research", "Gather data or correlate findings", "TECH to access databases, decrypt files, or analyze data, MEDICAL AID to review forensic records, EMPATHY to gain insight into recorded behaviors or testimonies"]},
+            {"ranges": [{"min":9,"max":9}], "values": ["Search", "Inspect a location for clues", "OBSERVATION to locate physical evidence, TECH to access or operate specialized gear, FORCE to bypass containers or barriers"]},
+            {"ranges": [{"min":10,"max":10}], "values": ["Surveil", "Observe a location or person over time", "OBSERVATION to spot details or catch sight of suspects, STEALTH to remain hidden, STAMINA to endure long hours or harsh environments"]},
+            {"ranges": [{"min":11,"max":11}], "values": ["Survive", "Overcome a physical danger or harsh environment", "FORCE to overcome physical obstacles, STAMINA to endure environmental dangers and injuries, MOBILITY or DRIVING to escape danger, MEDICAL AID to patch up or lend help"]},
+            {"ranges": [{"min":12,"max":12}], "values": ["Trail", "Follow a person or vehicle", "STEALTH to remain discreet, OBSERVATION to keep sight of the target, MOBILITY or DRIVING to overcome obstacles"]}
+          ]
+        },
+        {
+          "id": "scene_check",
+          "title": "Scene Check",
+          "dice": ["d8"],
+          "columns": ["Result", "Detail", "Examples"],
+          "rows": [
+            {"ranges": [{"min":1,"max":1}], "values": ["Complicated", "On top of one or more skill rolls, overcoming the situation may require some combination of extra time, different approaches, more resources, additional risk, or rolling with a disadvantage", "A witness is unexpectedly hostile or attempts to flee the scene; you are blocked from examining a crime scene by corporate agents; the data you seek is confidential, and requires in-person access at the LAPD Mainframe"]},
+            {"ranges": [{"min":2,"max":5}], "values": ["Challenging", "Requires one or more skill rolls to proceed", "The witness is reluctant to answer your questions, or their answers are evasive; the crime scene is a mess, and requires a careful and lengthy search; finding the data you seek can be done remotely, but requires a TECH roll"]},
+            {"ranges": [{"min":6,"max":7}], "values": ["Routine", "Probably does not require a skill roll", "The witness is cooperative; there are obvious clues at the crime scene; the data you seek is easily retrieved"]},
+            {"ranges": [{"min":8,"max":8}], "values": ["Favorable", "Probably does not require a skill roll – if one is required, it is made with an advantage", "The witness has unexpected insight; a clue at the crime scene provides a promising break in the case; the data you seek connects to some other aspect of the case in a surprising way"]}
+          ]
+        },
+        {
+          "id": "question_check",
+          "title": "Question Check",
+          "dice": ["d10"],
+          "columns": ["Result"],
+          "rows": [
+            {"ranges": [{"min":1,"max":1}], "values": ["Extreme no"]},
+            {"ranges": [{"min":2,"max":5}], "values": ["No"]},
+            {"ranges": [{"min":6,"max":9}], "values": ["Yes"]},
+            {"ranges": [{"min":10,"max":10}], "values": ["Extreme yes"]}
+          ]
+        },
+        {
+          "id": "critical_success",
+          "title": "Critical Success",
+          "dice": ["d8"],
+          "columns": ["Result", "Bonus Effect"],
+          "rows": [
+            {"ranges": [{"min":1,"max":1}], "values": ["Observant: Notice something unexpected or reveal an opportunity.", "If you act on this discovery, gain an advantage on your next skill roll in this scene."]},
+            {"ranges": [{"min":2,"max":2}], "values": ["Confident: Commit to your current course of action.", "Recover 1 point of lost Resolve."]},
+            {"ranges": [{"min":3,"max":3}], "values": ["Unnoticed: Perform the action with quiet or subtlety.", "If making a STEALTH roll during this scene, gain an advantage."]},
+            {"ranges": [{"min":4,"max":4}], "values": ["Intimidating: Cause an NPC to falter or hesitate.", "The affected NPC gets a disadvantage on their next skill roll in this scene."]},
+            {"ranges": [{"min":5,"max":5}], "values": ["Impressive: Make an impression on an NPC within the scene.", "One time within this scene, gain an advantage if you roll MANIPULATION against the affected NPC."]},
+            {"ranges": [{"min":6,"max":6}], "values": ["Helpful: An NPC benefits from your action.", "The affected NPC gains an advantage on their next skill roll in this scene."]},
+            {"ranges": [{"min":7,"max":7}], "values": ["Quick: Perform the action faster than expected.", "Building on your momentum, gain an advantage on your next skill roll during this scene."]},
+            {"ranges": [{"min":8,"max":8}], "values": ["Lucky: Catch a break.", "Gain an advantage on any skill rolls in this scene."]}
+          ]
+        },
+        {
+          "id": "npc_skill_level",
+          "title": "NPC Skill Level",
+          "dice": ["d8"],
+          "columns": ["NPC Proficiency", "Skill Roll"],
+          "rows": [
+            {"ranges": [{"min":1,"max":1}], "values": ["Unskilled (D/D)", "D6 / D6"]},
+            {"ranges": [{"min":2,"max":5}], "values": ["Competent (C/C)", "D8 / D8"]},
+            {"ranges": [{"min":6,"max":7}], "values": ["Experienced (B/B)", "D10 / D10"]},
+            {"ranges": [{"min":8,"max":8}], "values": ["Expert (A/A)", "D12 / D12"]}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Combat & Chases",
+      "tables": [
+        {
+          "id": "npc_tactics",
+          "title": "NPC Tactics",
+          "dice": ["d8"],
+          "columns": ["Result", "Behavior"],
+          "rows": [
+            {"ranges": [{"min":1,"max":1}], "values": ["Reckless", "Closes the distance, throws caution to the wind, deals as much damage as possible"]},
+            {"ranges": [{"min":2,"max":4}], "values": ["Strategic", "Moves decisively, picks high-value targets, surrounds and flanks"]},
+            {"ranges": [{"min":5,"max":7}], "values": ["Careful", "Hangs back, sticks to cover, coordinates with allies, takes the shot when it counts"]},
+            {"ranges": [{"min":8,"max":8}], "values": ["Cowardly", "Stays hidden, flees if given the chance, lashes out when cornered"]}
+          ]
+        },
+        {
+          "id": "npc_chase_maneuvers",
+          "title": "NPC Chase Maneuvers",
+          "dice": ["d8"],
+          "columns": ["Pursuer Maneuver", "Prey Maneuver"],
+          "rows": [
+            {"ranges": [{"min":1,"max":1}], "values": ["Stand and shoot", "Stand and shoot"]},
+            {"ranges": [{"min":2,"max":5}], "values": ["Pursue", "Flee"]},
+            {"ranges": [{"min":6,"max":7}], "values": ["Cut off", "Block or hide"]},
+            {"ranges": [{"min":8,"max":8}], "values": ["Stand and shoot", "Stand and shoot"]}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Case File Tools",
+      "tables": [
+        {
+          "id": "cipher_table",
+          "title": "Cipher Table",
+          "dice": ["d6", "d12"],
+          "columns": ["Method", "Focus"],
+          "rows": [
+            {"ranges": [{"min":1,"max":2},{"min":1,"max":1}], "values": ["Abandon", "Authority"]},
+            {"ranges": [{"min":1,"max":2},{"min":2,"max":2}], "values": ["Aid", "Connection"]},
+            {"ranges": [{"min":1,"max":2},{"min":3,"max":3}], "values": ["Attack", "Corruption"]},
+            {"ranges": [{"min":1,"max":2},{"min":4,"max":4}], "values": ["Betray", "Crime"]},
+            {"ranges": [{"min":1,"max":2},{"min":5,"max":5}], "values": ["Bribe", "Death"]},
+            {"ranges": [{"min":1,"max":2},{"min":6,"max":6}], "values": ["Capture", "Dream"]},
+            {"ranges": [{"min":1,"max":2},{"min":7,"max":7}], "values": ["Change", "Duty"]},
+            {"ranges": [{"min":1,"max":2},{"min":8,"max":8}], "values": ["Chase", "Fear"]},
+            {"ranges": [{"min":1,"max":2},{"min":9,"max":9}], "values": ["Command", "Freedom"]},
+            {"ranges": [{"min":1,"max":2},{"min":10,"max":10}], "values": ["Conceal", "Greed"]},
+            {"ranges": [{"min":1,"max":2},{"min":11,"max":11}], "values": ["Conspire", "Guilt"]},
+            {"ranges": [{"min":1,"max":2},{"min":12,"max":12}], "values": ["Control", "Hate"]},
+            {"ranges": [{"min":3,"max":4},{"min":1,"max":1}], "values": ["Create", "Hope"]},
+            {"ranges": [{"min":3,"max":4},{"min":2,"max":2}], "values": ["Deceive", "Identity"]},
+            {"ranges": [{"min":3,"max":4},{"min":3,"max":3}], "values": ["Defy", "Justice"]},
+            {"ranges": [{"min":3,"max":4},{"min":4,"max":4}], "values": ["Demand", "Law"]},
+            {"ranges": [{"min":3,"max":4},{"min":5,"max":5}], "values": ["Destroy", "Life"]},
+            {"ranges": [{"min":3,"max":4},{"min":6,"max":6}], "values": ["Discover", "Location"]},
+            {"ranges": [{"min":3,"max":4},{"min":7,"max":7}], "values": ["Endure", "Loss"]},
+            {"ranges": [{"min":3,"max":4},{"min":8,"max":8}], "values": ["Escape", "Love"]},
+            {"ranges": [{"min":3,"max":4},{"min":9,"max":9}], "values": ["Fight", "Loyalty"]},
+            {"ranges": [{"min":3,"max":4},{"min":10,"max":10}], "values": ["Flee", "Memory"]},
+            {"ranges": [{"min":3,"max":4},{"min":11,"max":11}], "values": ["Hunt", "Obsession"]},
+            {"ranges": [{"min":3,"max":4},{"min":12,"max":12}], "values": ["Infiltrate", "Passion"]},
+            {"ranges": [{"min":5,"max":6},{"min":1,"max":1}], "values": ["Investigate", "Power"]},
+            {"ranges": [{"min":5,"max":6},{"min":2,"max":2}], "values": ["Manipulate", "Rebellion"]},
+            {"ranges": [{"min":5,"max":6},{"min":3,"max":3}], "values": ["Persuade", "Secret"]},
+            {"ranges": [{"min":5,"max":6},{"min":4,"max":4}], "values": ["Preserve", "Surveillance"]},
+            {"ranges": [{"min":5,"max":6},{"min":5,"max":5}], "values": ["Protect", "Technology"]},
+            {"ranges": [{"min":5,"max":6},{"min":6,"max":6}], "values": ["Resist", "Temptation"]},
+            {"ranges": [{"min":5,"max":6},{"min":7,"max":7}], "values": ["Reveal", "Time"]},
+            {"ranges": [{"min":5,"max":6},{"min":8,"max":8}], "values": ["Sabotage", "Trust"]},
+            {"ranges": [{"min":5,"max":6},{"min":9,"max":9}], "values": ["Sacrifice", "Truth"]},
+            {"ranges": [{"min":5,"max":6},{"min":10,"max":10}], "values": ["Search", "Vice"]},
+            {"ranges": [{"min":5,"max":6},{"min":11,"max":11}], "values": ["Seduce", "Victim"]},
+            {"ranges": [{"min":5,"max":6},{"min":12,"max":12}], "values": ["Threaten", "Violence"]}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Case Briefing",
+      "tables": [
+        {
+          "id": "case_briefing_assignment",
+          "title": "Table 1: Assignment",
+          "dice": ["d6", "d10"],
+          "columns": ["Result"],
+          "rows": [
+            {"ranges": [{"min":1,"max":3},{"min":1,"max":1}], "values": ["Assault"]},
+            {"ranges": [{"min":1,"max":3},{"min":2,"max":2}], "values": ["Black Market"]},
+            {"ranges": [{"min":1,"max":3},{"min":3,"max":3}], "values": ["Blackmail"]},
+            {"ranges": [{"min":1,"max":3},{"min":4,"max":4}], "values": ["Corporate Assassination"]},
+            {"ranges": [{"min":1,"max":3},{"min":5,"max":5}], "values": ["Corporate Espionage"]},
+            {"ranges": [{"min":1,"max":3},{"min":6,"max":6}], "values": ["Corporate Fraud"]},
+            {"ranges": [{"min":1,"max":3},{"min":7,"max":7}], "values": ["Extortion"]},
+            {"ranges": [{"min":1,"max":3},{"min":8,"max":8}], "values": ["Kidnapping"]},
+            {"ranges": [{"min":1,"max":3},{"min":9,"max":9}], "values": ["Missing Person"]},
+            {"ranges": [{"min":1,"max":3},{"min":10,"max":10}], "values": ["Murder"]},
+            {"ranges": [{"min":4,"max":6},{"min":1,"max":1}], "values": ["Mysterious Death"]},
+            {"ranges": [{"min":4,"max":6},{"min":2,"max":2}], "values": ["Police Corruption"]},
+            {"ranges": [{"min":4,"max":6},{"min":3,"max":3}], "values": ["Political scandal"]},
+            {"ranges": [{"min":4,"max":6},{"min":4,"max":4}], "values": ["Rebellion / Extremism"]},
+            {"ranges": [{"min":4,"max":6},{"min":5,"max":5}], "values": ["Retirement Order"]},
+            {"ranges": [{"min":4,"max":6},{"min":6,"max":6}], "values": ["Robbery"]},
+            {"ranges": [{"min":4,"max":6},{"min":7,"max":7}], "values": ["Sabotage"]},
+            {"ranges": [{"min":4,"max":6},{"min":8,"max":8}], "values": ["Smuggling / Trafficking"]},
+            {"ranges": [{"min":4,"max":6},{"min":9,"max":9}], "values": ["Terrorism"]},
+            {"ranges": [{"min":4,"max":6},{"min":10,"max":10}], "values": ["Vigilantism"]}
+          ]
+        },
+        {
+          "id": "case_briefing_relevance",
+          "title": "Table 2: Relevance",
+          "dice": ["d12"],
+          "columns": ["Result"],
+          "rows": [
+            {"ranges": [{"min":1,"max":1}], "values": ["Replicant is a victim"]},
+            {"ranges": [{"min":2,"max":2}], "values": ["Replicant is a key witness or accuser"]},
+            {"ranges": [{"min":3,"max":3}], "values": ["Replicant is a suspect"]},
+            {"ranges": [{"min":4,"max":4}], "values": ["Replicant is an accomplice"]},
+            {"ranges": [{"min":5,"max":5}], "values": ["Replicant is a consultant on the case"]},
+            {"ranges": [{"min":6,"max":6}], "values": ["Involves Replicant tech"]},
+            {"ranges": [{"min":7,"max":7}], "values": ["Involves animoid tech"]},
+            {"ranges": [{"min":8,"max":8}], "values": ["Involves Human Supremacists"]},
+            {"ranges": [{"min":9,"max":9}], "values": ["Involves the Replicant Underground"]},
+            {"ranges": [{"min":10,"max":10}], "values": ["Involves Replicant sympathizers"]},
+            {"ranges": [{"min":11,"max":11}], "values": ["Involves Wallace Corp interests"]},
+            {"ranges": [{"min":12,"max":12}], "values": ["Involves a fellow Blade Runner"]}
+          ]
+        },
+        {
+          "id": "case_briefing_initial_complication",
+          "title": "Table 3: Initial Complication",
+          "dice": ["d12"],
+          "columns": ["Result"],
+          "rows": [
+            {"ranges": [{"min":1,"max":1}], "values": ["Requires unusual discretion or secrecy"]},
+            {"ranges": [{"min":2,"max":2}], "values": ["Heavy-handed corporate oversight"]},
+            {"ranges": [{"min":3,"max":3}], "values": ["High-profile media scrutiny"]},
+            {"ranges": [{"min":4,"max":4}], "values": ["Rival investigator or agency is also on the case"]},
+            {"ranges": [{"min":5,"max":5}], "values": ["Compromised crime scene or evidence"]},
+            {"ranges": [{"min":6,"max":6}], "values": ["Outside your usual jurisdiction or expertise"]},
+            {"ranges": [{"min":7,"max":7}], "values": ["Classified or redacted details – above your pay grade"]},
+            {"ranges": [{"min":8,"max":8}], "values": ["Previous investigator killed or missing"]},
+            {"ranges": [{"min":9,"max":9}], "values": ["Involves a notorious criminal faction or person"]},
+            {"ranges": [{"min":10,"max":10}], "values": ["Involves an influential or powerful person"]},
+            {"ranges": [{"min":11,"max":11}], "values": ["Cold case"]},
+            {"ranges": [{"min":12,"max":12}], "values": ["Time-sensitive deadline"]}
+          ]
+        },
+        {
+          "id": "case_briefing_personal_hook",
+          "title": "Table 4: Personal Hook",
+          "dice": ["d12"],
+          "columns": ["Result"],
+          "rows": [
+            {"ranges": [{"min":1,"max":1}], "values": ["Involves an aspect of your key memory"]},
+            {"ranges": [{"min":2,"max":2}], "values": ["Involves one of your old cases"]},
+            {"ranges": [{"min":3,"max":3}], "values": ["Involves a past mistake or regret"]},
+            {"ranges": [{"min":4,"max":4}], "values": ["Involves a fellow investigator or mentor"]},
+            {"ranges": [{"min":5,"max":5}], "values": ["Involves a personal vice"]},
+            {"ranges": [{"min":6,"max":6}], "values": ["Involves your strongly held principles or beliefs"]},
+            {"ranges": [{"min":7,"max":7}], "values": ["Involves a former lover"]},
+            {"ranges": [{"min":8,"max":8}], "values": ["Involves someone you owe a debt or favor to"]},
+            {"ranges": [{"min":9,"max":9}], "values": ["Involves a death or loss from your past"]},
+            {"ranges": [{"min":10,"max":10}], "values": ["Involves professional risk or opportunities"]},
+            {"ranges": [{"min":11,"max":11}], "values": ["Involves a personal interest or obsession"]},
+            {"ranges": [{"min":12,"max":12}], "values": ["Involves your key relationship"]}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Clue Tables",
+      "tables": [
+        {
+          "id": "clue_table_meaning",
+          "title": "Clue Table 1: Meaning",
+          "dice": ["d8"],
+          "columns": ["Result"],
+          "rows": [
+            {"ranges": [{"min":1,"max":1}], "values": ["Involves your personal experiences or memories"]},
+            {"ranges": [{"min":2,"max":2}], "values": ["Contradicts a previous fact or clue"]},
+            {"ranges": [{"min":3,"max":3}], "values": ["Affirms a previous fact or clue"]},
+            {"ranges": [{"min":4,"max":4}], "values": ["Connects to a known location"]},
+            {"ranges": [{"min":5,"max":5}], "values": ["Connects to a new location"]},
+            {"ranges": [{"min":6,"max":6}], "values": ["Connects to a known person"]},
+            {"ranges": [{"min":7,"max":7}], "values": ["Connects to an unknown or mysterious person"]},
+            {"ranges": [{"min":8,"max":8}], "values": ["Is mysterious, but intriguing"]}
+          ]
+        },
+        {
+          "id": "clue_table_evidence_descriptor",
+          "title": "Clue Table 2: Evidence Descriptor",
+          "dice": ["d6", "d10"],
+          "columns": ["Result", "Detail"],
+          "rows": [
+            {"ranges": [{"min":1,"max":3},{"min":1,"max":1}], "values": ["Altered", "It is modified from its original form or function"]},
+            {"ranges": [{"min":1,"max":3},{"min":2,"max":2}], "values": ["Contradictory", "It conflicts with a previously understood aspect of the case"]},
+            {"ranges": [{"min":1,"max":3},{"min":3,"max":3}], "values": ["Corrupted", "It has been tampered with or degraded"]},
+            {"ranges": [{"min":1,"max":3},{"min":4,"max":4}], "values": ["Counterfeit", "It is forged or faked"]},
+            {"ranges": [{"min":1,"max":3},{"min":5,"max":5}], "values": ["Disguised", "It hides its true nature or purpose"]},
+            {"ranges": [{"min":1,"max":3},{"min":6,"max":6}], "values": ["Disturbed", "It is displaced or disarranged"]},
+            {"ranges": [{"min":1,"max":3},{"min":7,"max":7}], "values": ["Familiar", "It shares characteristics with another piece of evidence"]},
+            {"ranges": [{"min":1,"max":3},{"min":8,"max":8}], "values": ["Flawed", "It is marred by damage or defect"]},
+            {"ranges": [{"min":1,"max":3},{"min":9,"max":9}], "values": ["Hidden", "It is purposely concealed"]},
+            {"ranges": [{"min":1,"max":3},{"min":10,"max":10}], "values": ["Marked", "It bears a message or symbol"]},
+            {"ranges": [{"min":4,"max":6},{"min":1,"max":1}], "values": ["Misplaced", "It is in the wrong place or environment"]},
+            {"ranges": [{"min":4,"max":6},{"min":2,"max":2}], "values": ["Missing", "It should be here, but is not"]},
+            {"ranges": [{"min":4,"max":6},{"min":3,"max":3}], "values": ["Obvious", "It is readily apparent"]},
+            {"ranges": [{"min":4,"max":6},{"min":4,"max":4}], "values": ["Partial", "It is incomplete or fragmented"]},
+            {"ranges": [{"min":4,"max":6},{"min":5,"max":5}], "values": ["Replaced", "It is swapped for something else"]},
+            {"ranges": [{"min":4,"max":6},{"min":6,"max":6}], "values": ["Residual", "It is a trace of something left behind"]},
+            {"ranges": [{"min":4,"max":6},{"min":7,"max":7}], "values": ["Ruined", "It is destroyed or broken"]},
+            {"ranges": [{"min":4,"max":6},{"min":8,"max":8}], "values": ["Sensitive", "It relates to or exposes protected information"]},
+            {"ranges": [{"min":4,"max":6},{"min":9,"max":9}], "values": ["Subtle", "It is unremarkable or inconspicuous"]},
+            {"ranges": [{"min":4,"max":6},{"min":10,"max":10}], "values": ["Unexpected", "It should not be here"]}
+          ]
+        },
+        {
+          "id": "clue_table_evidence_type",
+          "title": "Clue Table 3: Evidence Type",
+          "dice": ["d6", "d12"],
+          "columns": ["Result"],
+          "rows": [
+            {"ranges": [{"min":1,"max":3},{"min":1,"max":1}], "values": ["Ammunition"]},
+            {"ranges": [{"min":1,"max":3},{"min":2,"max":2}], "values": ["Body"]},
+            {"ranges": [{"min":1,"max":3},{"min":3,"max":3}], "values": ["Book / magazine"]},
+            {"ranges": [{"min":1,"max":3},{"min":4,"max":4}], "values": ["Container"]},
+            {"ranges": [{"min":1,"max":3},{"min":5,"max":5}], "values": ["Credentials"]},
+            {"ranges": [{"min":1,"max":3},{"min":6,"max":6}], "values": ["Device"]},
+            {"ranges": [{"min":1,"max":3},{"min":7,"max":7}], "values": ["Document"]},
+            {"ranges": [{"min":1,"max":3},{"min":8,"max":8}], "values": ["Furnishing"]},
+            {"ranges": [{"min":1,"max":3},{"min":9,"max":9}], "values": ["Garment"]},
+            {"ranges": [{"min":1,"max":3},{"min":10,"max":10}], "values": ["ID card"]},
+            {"ranges": [{"min":1,"max":3},{"min":11,"max":11}], "values": ["Jewelry"]},
+            {"ranges": [{"min":1,"max":3},{"min":12,"max":12}], "values": ["Key"]},
+            {"ranges": [{"min":4,"max":6},{"min":1,"max":1}], "values": ["Map"]},
+            {"ranges": [{"min":4,"max":6},{"min":2,"max":2}], "values": ["Marking / Stain"]},
+            {"ranges": [{"min":4,"max":6},{"min":3,"max":3}], "values": ["Memento"]},
+            {"ranges": [{"min":4,"max":6},{"min":4,"max":4}], "values": ["Message"]},
+            {"ranges": [{"min":4,"max":6},{"min":5,"max":5}], "values": ["Note"]},
+            {"ranges": [{"min":4,"max":6},{"min":6,"max":6}], "values": ["Photograph"]},
+            {"ranges": [{"min":4,"max":6},{"min":7,"max":7}], "values": ["Print / track"]},
+            {"ranges": [{"min":4,"max":6},{"min":8,"max":8}], "values": ["Recording"]},
+            {"ranges": [{"min":4,"max":6},{"min":9,"max":9}], "values": ["Substance"]},
+            {"ranges": [{"min":4,"max":6},{"min":10,"max":10}], "values": ["Symbol / logo"]},
+            {"ranges": [{"min":4,"max":6},{"min":11,"max":11}], "values": ["Tool"]},
+            {"ranges": [{"min":4,"max":6},{"min":12,"max":12}], "values": ["Weapon"]}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Character Tables",
+      "tables": [
+        {
+          "id": "character_table_sphere",
+          "title": "Table 1: Sphere",
+          "dice": ["d6", "d8"],
+          "columns": ["Result"],
+          "rows": [
+            {"ranges": [{"min":1,"max":3},{"min":1,"max":1}], "values": ["Commerce"]},
+            {"ranges": [{"min":1,"max":3},{"min":2,"max":2}], "values": ["Craftsmanship"]},
+            {"ranges": [{"min":1,"max":3},{"min":3,"max":3}], "values": ["Crime"]},
+            {"ranges": [{"min":1,"max":3},{"min":4,"max":4}], "values": ["Entertainment"]},
+            {"ranges": [{"min":1,"max":3},{"min":5,"max":5}], "values": ["Espionage"]},
+            {"ranges": [{"min":1,"max":3},{"min":6,"max":6}], "values": ["Ideology"]},
+            {"ranges": [{"min":1,"max":3},{"min":7,"max":7}], "values": ["Labor"]},
+            {"ranges": [{"min":1,"max":3},{"min":8,"max":8}], "values": ["Law"]},
+            {"ranges": [{"min":4,"max":6},{"min":1,"max":1}], "values": ["Media"]},
+            {"ranges": [{"min":4,"max":6},{"min":2,"max":2}], "values": ["Medicine"]},
+            {"ranges": [{"min":4,"max":6},{"min":3,"max":3}], "values": ["Politics"]},
+            {"ranges": [{"min":4,"max":6},{"min":4,"max":4}], "values": ["Science"]},
+            {"ranges": [{"min":4,"max":6},{"min":5,"max":5}], "values": ["Security"]},
+            {"ranges": [{"min":4,"max":6},{"min":6,"max":6}], "values": ["Street life"]},
+            {"ranges": [{"min":4,"max":6},{"min":7,"max":7}], "values": ["Technology"]},
+            {"ranges": [{"min":4,"max":6},{"min":8,"max":8}], "values": ["Warfare"]}
+          ]
+        },
+        {
+          "id": "character_table_trait",
+          "title": "Table 2: Trait",
+          "dice": ["d6", "d12"],
+          "columns": ["Result"],
+          "rows": [
+            {"ranges": [{"min":1,"max":2},{"min":1,"max":1}], "values": ["Aged"]},
+            {"ranges": [{"min":1,"max":2},{"min":2,"max":2}], "values": ["Aggressive"]},
+            {"ranges": [{"min":1,"max":2},{"min":3,"max":3}], "values": ["Alluring"]},
+            {"ranges": [{"min":1,"max":2},{"min":4,"max":4}], "values": ["Aloof"]},
+            {"ranges": [{"min":1,"max":2},{"min":5,"max":5}], "values": ["Argumentative"]},
+            {"ranges": [{"min":1,"max":2},{"min":6,"max":6}], "values": ["Arrogant"]},
+            {"ranges": [{"min":1,"max":2},{"min":7,"max":7}], "values": ["Athletic"]},
+            {"ranges": [{"min":1,"max":2},{"min":8,"max":8}], "values": ["Charming"]},
+            {"ranges": [{"min":1,"max":2},{"min":9,"max":9}], "values": ["Curt"]},
+            {"ranges": [{"min":1,"max":2},{"min":10,"max":10}], "values": ["Demanding"]},
+            {"ranges": [{"min":1,"max":2},{"min":11,"max":11}], "values": ["Desperate"]},
+            {"ranges": [{"min":1,"max":2},{"min":12,"max":12}], "values": ["Eccentric"]},
+            {"ranges": [{"min":3,"max":4},{"min":1,"max":1}], "values": ["Evasive"]},
+            {"ranges": [{"min":3,"max":4},{"min":2,"max":2}], "values": ["Fearful"]},
+            {"ranges": [{"min":3,"max":4},{"min":3,"max":3}], "values": ["Fidgety"]},
+            {"ranges": [{"min":3,"max":4},{"min":4,"max":4}], "values": ["Flirty"]},
+            {"ranges": [{"min":3,"max":4},{"min":5,"max":5}], "values": ["Forlorn"]},
+            {"ranges": [{"min":3,"max":4},{"min":6,"max":6}], "values": ["Glamorous"]},
+            {"ranges": [{"min":3,"max":4},{"min":7,"max":7}], "values": ["Gruff"]},
+            {"ranges": [{"min":3,"max":4},{"min":8,"max":8}], "values": ["Harried"]},
+            {"ranges": [{"min":3,"max":4},{"min":9,"max":9}], "values": ["Helpful"]},
+            {"ranges": [{"min":3,"max":4},{"min":10,"max":10}], "values": ["High-strung"]},
+            {"ranges": [{"min":3,"max":4},{"min":11,"max":11}], "values": ["Inquisitive"]},
+            {"ranges": [{"min":3,"max":4},{"min":12,"max":12}], "values": ["Intimidating"]},
+            {"ranges": [{"min":5,"max":6},{"min":1,"max":1}], "values": ["Passive"]},
+            {"ranges": [{"min":5,"max":6},{"min":2,"max":2}], "values": ["Polished"]},
+            {"ranges": [{"min":5,"max":6},{"min":3,"max":3}], "values": ["Ruthless"]},
+            {"ranges": [{"min":5,"max":6},{"min":4,"max":4}], "values": ["Scarred"]},
+            {"ranges": [{"min":5,"max":6},{"min":5,"max":5}], "values": ["Secretive"]},
+            {"ranges": [{"min":5,"max":6},{"min":6,"max":6}], "values": ["Suspicious"]},
+            {"ranges": [{"min":5,"max":6},{"min":7,"max":7}], "values": ["Tattooed"]},
+            {"ranges": [{"min":5,"max":6},{"min":8,"max":8}], "values": ["Uncanny"]},
+            {"ranges": [{"min":5,"max":6},{"min":9,"max":9}], "values": ["Unkempt"]},
+            {"ranges": [{"min":5,"max":6},{"min":10,"max":10}], "values": ["Unserious"]},
+            {"ranges": [{"min":5,"max":6},{"min":11,"max":11}], "values": ["Violent"]},
+            {"ranges": [{"min":5,"max":6},{"min":12,"max":12}], "values": ["Youthful"]}
+          ]
+        },
+        {
+          "id": "human_or_replicant",
+          "title": "Human or Replicant",
+          "dice": ["d10"],
+          "columns": ["Result"],
+          "rows": [
+            {"ranges": [{"min":1,"max":1}], "values": ["Replicant"]},
+            {"ranges": [{"min":2,"max":9}], "values": ["Human"]},
+            {"ranges": [{"min":10,"max":10}], "values": ["Ambiguous — imagine an unusual identity, such as a rogue N-8 or digital companion"]}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Locations",
+      "tables": [
+        {
+          "id": "location_table",
+          "title": "Location Table",
+          "dice": ["d6", "d12"],
+          "columns": ["Environment", "Place"],
+          "rows": [
+            {"ranges": [{"min":1,"max":2},{"min":1,"max":1}], "values": ["Abandoned", "Alley"]},
+            {"ranges": [{"min":1,"max":2},{"min":2,"max":2}], "values": ["Bleak", "Apartment"]},
+            {"ranges": [{"min":1,"max":2},{"min":3,"max":3}], "values": ["Blocked", "Arcade"]},
+            {"ranges": [{"min":1,"max":2},{"min":4,"max":4}], "values": ["Breached", "Bank"]},
+            {"ranges": [{"min":1,"max":2},{"min":5,"max":5}], "values": ["Chaotic", "Bar"]},
+            {"ranges": [{"min":1,"max":2},{"min":6,"max":6}], "values": ["Claustrophobic", "Bazaar"]},
+            {"ranges": [{"min":1,"max":2},{"min":7,"max":7}], "values": ["Cluttered", "Casino"]},
+            {"ranges": [{"min":1,"max":2},{"min":8,"max":8}], "values": ["Confined", "Clinic"]},
+            {"ranges": [{"min":1,"max":2},{"min":9,"max":9}], "values": ["Crowded", "Club"]},
+            {"ranges": [{"min":1,"max":2},{"min":10,"max":10}], "values": ["Damaged", "Construction site"]},
+            {"ranges": [{"min":1,"max":2},{"min":11,"max":11}], "values": ["Dangerous", "Data Center"]},
+            {"ranges": [{"min":1,"max":2},{"min":12,"max":12}], "values": ["Dark", "Dock"]},
+            {"ranges": [{"min":3,"max":4},{"min":1,"max":1}], "values": ["Decaying", "Facility"]},
+            {"ranges": [{"min":3,"max":4},{"min":2,"max":2}], "values": ["Empty", "Factory"]},
+            {"ranges": [{"min":3,"max":4},{"min":3,"max":3}], "values": ["Familiar", "Garage"]},
+            {"ranges": [{"min":3,"max":4},{"min":4,"max":4}], "values": ["Garish", "Headquarters"]},
+            {"ranges": [{"min":3,"max":4},{"min":5,"max":5}], "values": ["Hazy", "Home"]},
+            {"ranges": [{"min":3,"max":4},{"min":6,"max":6}], "values": ["Hidden", "Hospital"]},
+            {"ranges": [{"min":3,"max":4},{"min":7,"max":7}], "values": ["Isolated", "Hotel"]},
+            {"ranges": [{"min":3,"max":4},{"min":8,"max":8}], "values": ["Large", "Lab"]},
+            {"ranges": [{"min":3,"max":4},{"min":9,"max":9}], "values": ["Lavish", "Library"]},
+            {"ranges": [{"min":3,"max":4},{"min":10,"max":10}], "values": ["Luxurious", "Lobby"]},
+            {"ranges": [{"min":3,"max":4},{"min":11,"max":11}], "values": ["Maze-like", "Monument"]},
+            {"ranges": [{"min":3,"max":4},{"min":12,"max":12}], "values": ["Neon-lit", "Municipal building"]},
+            {"ranges": [{"min":5,"max":6},{"min":1,"max":1}], "values": ["Noisy", "Nightclub"]},
+            {"ranges": [{"min":5,"max":6},{"min":2,"max":2}], "values": ["Open", "Office"]},
+            {"ranges": [{"min":5,"max":6},{"min":3,"max":3}], "values": ["Rain-soaked", "Restaurant"]},
+            {"ranges": [{"min":5,"max":6},{"min":4,"max":4}], "values": ["Ruined", "Rooftop"]},
+            {"ranges": [{"min":5,"max":6},{"min":5,"max":5}], "values": ["Safe", "Ruin"]},
+            {"ranges": [{"min":5,"max":6},{"min":6,"max":6}], "values": ["Secret", "Safehouse"]},
+            {"ranges": [{"min":5,"max":6},{"min":7,"max":7}], "values": ["Silent", "Shop"]},
+            {"ranges": [{"min":5,"max":6},{"min":8,"max":8}], "values": ["Simple", "Street"]},
+            {"ranges": [{"min":5,"max":6},{"min":9,"max":9}], "values": ["Small", "Transit hub"]},
+            {"ranges": [{"min":5,"max":6},{"min":10,"max":10}], "values": ["Stinking", "Tunnel"]},
+            {"ranges": [{"min":5,"max":6},{"min":11,"max":11}], "values": ["Subsurface", "Viaduct"]},
+            {"ranges": [{"min":5,"max":6},{"min":12,"max":12}], "values": ["Towering", "Warehouse"]}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Event Tables",
+      "tables": [
+        {
+          "id": "downtime_event_table",
+          "title": "Downtime Event Table",
+          "dice": ["d12"],
+          "columns": ["Home", "Street"],
+          "rows": [
+            {"ranges": [{"min":1,"max":1}], "values": ["You experience a dream related to the current case.", "You catch a glimpse of someone or something involved in the current case."]},
+            {"ranges": [{"min":2,"max":2}], "values": ["You experience a dream in which you relive your key memory – with a crucial difference.", "You spot some element of your key memory in the streets."]},
+            {"ranges": [{"min":3,"max":3}], "values": ["You are contacted or visited by someone involved in the current case.", "You are confronted by someone involved in the current case."]},
+            {"ranges": [{"min":4,"max":4}], "values": ["You are contacted or visited by someone involved in an old case.", "You are confronted by someone involved in an old case."]},
+            {"ranges": [{"min":5,"max":5}], "values": ["You receive a cryptic message or delivery.", "You encounter a stranger who delivers a message or warning."]},
+            {"ranges": [{"min":6,"max":6}], "values": ["You catch sight of a device or person surveilling your home.", "You catch sight of someone watching or following you."]},
+            {"ranges": [{"min":7,"max":7}], "values": ["Media reports reveal an unexpected aspect of the current case.", "You encounter an advertisement that evokes an aspect of the current case."]},
+            {"ranges": [{"min":8,"max":8}], "values": ["You are contacted or visited by your key relationship or other connection. They need something.", "You encounter your key relationship or other connection. They need something."]},
+            {"ranges": [{"min":9,"max":9}], "values": ["Outside your home, cops swarm to a nearby incident.", "You come upon a crime scene or the aftermath of an incident."]},
+            {"ranges": [{"min":10,"max":10}], "values": ["A noise or disturbance interrupts a restless sleep.", "You are caught in a dangerous encounter or disturbance."]},
+            {"ranges": [{"min":11,"max":11}], "values": ["Time passes without your awareness, hours slipping by.", "You find yourself in an unfamiliar location, barely remembering the path that led you there."]},
+            {"ranges": [{"min":12,"max":12}], "values": ["You find comfort in solitude. Heal an extra point of stress.", "You find comfort or companionship among the crowds. Heal an extra point of stress."]}
+          ]
+        },
+        {
+          "id": "countdown_event_table",
+          "title": "Countdown Event Table",
+          "dice": ["d12"],
+          "columns": ["Result", "Examples"],
+          "rows": [
+            {"ranges": [{"min":1,"max":1}], "values": ["Accusation", "Implicated or framed, secrets or misconduct revealed"]},
+            {"ranges": [{"min":2,"max":2}], "values": ["Betrayal", "Ally reveals true motive or loyalty, traitor makes their move, sabotage from within"]},
+            {"ranges": [{"min":3,"max":3}], "values": ["Confrontation", "Ambushed, pursued, snatched"]},
+            {"ranges": [{"min":4,"max":4}], "values": ["Development", "New evidence, another victim, witness comes forward"]},
+            {"ranges": [{"min":5,"max":5}], "values": ["Disaster", "Violence breaks out, collision or explosion, mass casualties"]},
+            {"ranges": [{"min":6,"max":6}], "values": ["Diversion", "False lead, wild goose chase, drawn into a trap"]},
+            {"ranges": [{"min":7,"max":7}], "values": ["Entanglement", "Key relationship drawn into danger, old debt resurfaces, personal vice causes trouble"]},
+            {"ranges": [{"min":8,"max":8}], "values": ["Interference", "Bribe or coercion, access or privileges lost, taken off the case"]},
+            {"ranges": [{"min":9,"max":9}], "values": ["Loss", "Evidence stolen or destroyed, key person killed or missing, safehouse compromised"]},
+            {"ranges": [{"min":10,"max":10}], "values": ["Pressure", "Higher-ups push for progress, new deadline imposed, media coverage amps up"]},
+            {"ranges": [{"min":11,"max":11}], "values": ["Summons", "Authority demands your presence, witness or suspect has news, connection asks to meet"]},
+            {"ranges": [{"min":12,"max":12}], "values": ["Threat", "Cryptic message, home or vehicle ransacked, warned off the case"]}
+          ]
+        }
+      ]
+    }
+  ]
+}
